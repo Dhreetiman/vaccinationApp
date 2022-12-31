@@ -57,6 +57,9 @@ const isValidDate = (value) => {
     return (/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/).test(value)
 }
 
+const isValidCity = (value) => {
+    return (/^[A-za-z]+$/).test(value)
+}
 module.exports = {
     checkInput,
     isValidInput,
@@ -67,5 +70,6 @@ module.exports = {
     isValidObjectId,
     isValidNum,
     isValidAadhar,
-    isValidDate
+    isValidDate,
+    isValidCity
 }

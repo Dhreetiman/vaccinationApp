@@ -40,7 +40,7 @@ const getUserList = async (req, res) => {
         let data = req.query
         let {age, pincode, vaccineStatus, ...rest} = data
         let token = req.token
-        console.log(token);
+        // console.log(token);
 
         let checkAdmin = await adminModel.findById(token)
         if (!checkAdmin) return res.status(400).send({ status: false, message: "Unauthorised admin" })
