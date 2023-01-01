@@ -43,7 +43,7 @@ const getUserList = async (req, res) => {
         // console.log(token);
 
         let checkAdmin = await adminModel.findById(token)
-        if (!checkAdmin) return res.status(400).send({ status: false, message: "Unauthorised admin" })
+        if (!checkAdmin) return res.status(400).send({ status: false, message: "Only admins was authorized to perform this task" })
 
         if (validator.checkInput(rest)) return res.status(400).send({ status: false, message: "you can only filter data by using age, pincode and vaccineStatus" })
 

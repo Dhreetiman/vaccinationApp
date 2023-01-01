@@ -17,7 +17,7 @@ const timeSlotSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    timeSlots: [{
+    timeSlots: {
         "10:00AM-10:30AM": {type: String, enum: ["Available", "Unavailable"], default: "Available"},
         "10:30AM-11:00AM": {type: String, enum: ["Available", "Unavailable"], default: "Available"},
         "11:00AM-11:30AM": {type: String, enum: ["Available", "Unavailable"], default: "Available"},
@@ -29,7 +29,7 @@ const timeSlotSchema = new mongoose.Schema({
         "03:00PM-03:30PM": {type: String, enum: ["Available", "Unavailable"], default: "Available"},
         "03:30PM-04:00PM": {type: String, enum: ["Available", "Unavailable"], default: "Available"},
         _id: false
-    }]
+    }
     
 })
 

@@ -58,7 +58,7 @@ const isValidDate = (value) => {
 }
 
 const isValidCity = (value) => {
-    return (/^[A-za-z]+$/).test(value)
+    return (/^[a-zA-Z ]*$/).test(value)
 }
 module.exports = {
     checkInput,

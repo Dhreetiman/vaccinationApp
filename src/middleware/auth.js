@@ -43,7 +43,7 @@ const Authorization = async (req, res, next) => {
         let userData = await userModel.findById(userId)
         if (!userData) return res.status(404).send({ status: false, message: "User Does Not Exist" })
 
-        if (userData['_id'].toString() !== req.token) {
+        if (userData['_id'] != req.token) {
             return res.status(403).send({ status: false, message: "Unauthorized User Access" })
         }
         next()

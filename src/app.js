@@ -6,6 +6,8 @@ const app = express()
 app.use(express.json())
 app.use('/', router)
 
+mongoose.set("strictPopulate",false)
+
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb+srv://Lucifer:lucifer123@cluster1.578aivq.mongodb.net/VaccinationApp?retryWrites=true&w=majority', {useNewUrlParser: true})
 .then(()=>console.log("MongoDB Connected"))

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const {registerUser, loginUser} = require('../controller/userController')
+const {registerUser, loginUser, getVaccineSlot, bookVaccineSlot} = require('../controller/userController')
 const {loginAdmin, getUserList} = require('../controller/adminController')
 const {createVaccineSlot} = require('../controller/timeSlotController')
 const middleware = require('../middleware/auth')
@@ -18,7 +18,11 @@ router.post('/login/admin' , loginAdmin)
 
 router.get('/user-list',middleware.Authentication, getUserList)
 
-router.post('/vaccine', createVaccineSlot)
+router.post('/vaccine',middleware.Authentication, createVaccineSlot)
+
+router.get('/vaccine/details/:userId',middleware.Authentication, middleware.Authorization ,getVaccineSlot)
+
+router.post('/vaccine/book/:userId', bookVaccineSlot)
 
 
 
